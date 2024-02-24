@@ -1,0 +1,59 @@
+@import "../../styles/partials/mixins";
+
+.warehouse__container {
+  border-bottom: 1px solid $slate;
+  height: auto;
+  &--grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    @include tablet {
+      display: flex;
+      align-items: center;
+    }
+
+    &-warehouse {
+      @include tablet {
+        display: flex;
+        flex-direction: row;
+      }
+    }
+
+    &-info {
+      @include tablet {
+        display: flex;
+      }
+    }
+
+    &.icon {
+      display: grid;
+    }
+  }
+
+  &--flex {
+    display: flex;
+    align-items: center;
+  }
+
+  &--title {
+    @include tableHeader;
+    color: $slate;
+  }
+
+  &--btn {
+    @include textLink;
+    @include labelText;
+  }
+
+  &--text {
+    color: $instock-black;
+    @include bodySmall;
+  }
+
+  &--icon {
+    &.edit {
+      float: right;
+      fill: black !important;
+    }
+  }
+}
