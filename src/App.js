@@ -1,19 +1,17 @@
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Warehouses from "./pages/Warehouses/Warehouses";
+import Inventory from "./pages/Inventory/Inventory";
 import Warehouse from "./components/Warehouse/Warehouse";
 import "./styles/global.scss";
 
 function App() {
   return (
-    <div className="app">
-      <p>Hello</p>
-      <Warehouse
-        warehouse={"Warehouse"}
-        address_line_1={"1"}
-        address_line_2={"2"}
-        contact={"us"}
-        number={"123"}
-        email={"123@today.tom"}
-      />
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Warehouses />} />
+        <Route path="/inventory" element={<Inventory />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 
