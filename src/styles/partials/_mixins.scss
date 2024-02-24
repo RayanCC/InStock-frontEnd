@@ -1,3 +1,24 @@
+//Media Query
+$tablet: 768px;
+$desktop: 1280px;
+
+@mixin tablet {
+  @media screen and (min-width: 768px) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media screen and (min-width: 1280px) {
+    @content;
+  }
+}
+
+@mixin mobile {
+  @media screen and (max-width: 767px) {
+    @content;
+  }
+}
 //Type Kit
 @mixin pageHeader {
   font-size: 32px;
