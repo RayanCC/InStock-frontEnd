@@ -1,0 +1,15 @@
+@import "../../styles/partials/mixins";
+
+.footer {
+  font-weight: 400;
+  font-size: 11px;
+  line-height: 16px;
+  color: $slate;
+  display: flex;
+  justify-content: center;
+  margin-top: 32px;
+
+  @include tablet {
+    font-size: 12px;
+  }
+}
