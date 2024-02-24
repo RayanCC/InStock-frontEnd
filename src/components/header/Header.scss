@@ -1,6 +1,4 @@
-@import "../../styles/partials/breakpoints";
-@import "../../styles/partials/color";
-@import "../../styles/partials/fonts";
+@import "../../styles/partials/mixins";
 
 * {
   margin: 0;
@@ -8,7 +6,7 @@
 }
 
 .header {
-  background-color: $Graphite;
+  background-color: $graphite;
   height: 200px;
 
   .logoContainer {
@@ -20,7 +18,7 @@
     }
 
     @include tablet {
-        padding-left: 64px;
+      padding-left: 64px;
     }
   }
 
@@ -40,7 +38,7 @@
 }
 
 .nav_container {
-  color: $Cloud;
+  color: $cloud;
   margin: 0 16px;
   display: flex;
   justify-content: space-around;
@@ -53,7 +51,7 @@
   @include desktop {
     margin: 0 64px;
   }
-  
+
   .warehouseTab {
     display: flex;
     justify-content: center;
@@ -88,8 +86,8 @@
     }
   }
   .active {
-    background-color: $Instock-Black;
-    color: $White;
+    background-color: $instock-black;
+    color: $white;
     border-radius: 20px;
     padding: 10px 0;
   }

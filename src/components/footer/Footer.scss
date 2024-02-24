@@ -1,18 +1,15 @@
-@import "../../styles/partials/breakpoints";
-@import "../../styles/partials/color";
-@import "../../styles/partials/fonts";
+@import "../../styles/partials/mixins";
 
 .footer {
-    font-family: "Titillium";
-    font-weight: 400;
-    font-size: 11px;
-    line-height: 16px;
-    color: $Slate;
-    display: flex;
-    justify-content: center;
-    margin-top: 32px;
+  font-weight: 400;
+  font-size: 11px;
+  line-height: 16px;
+  color: $slate;
+  display: flex;
+  justify-content: center;
+  margin-top: 32px;
 
-    @include tablet {
-        font-size: 12px;
-    }
+  @include tablet {
+    font-size: 12px;
+  }
 }
