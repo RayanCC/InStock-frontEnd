@@ -2,7 +2,7 @@ import "./header.scss";
 import logo2 from "../../assets/logo/InStock-Logo_2x.png";
 import { useState } from "react";
 
-function Header() {
+const Header = () => {
   const [activeTab, setActiveTab] = useState("warehouse");
   const handleTabClick = (tabName) => {
     setActiveTab(tabName);
@@ -35,6 +35,6 @@ function Header() {
       </div>
     </div>
   );
-}
+};
 
 export default Header;
