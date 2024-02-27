@@ -108,6 +108,64 @@ $light-grey: #f7f8f9;
 $green: #158463;
 $red: #c94515;
 
+//Paddings
+@mixin afterComponentPadding {
+  padding-bottom: 24px;
+
+  @include mobile {
+    padding-bottom: 16px;
+  }
+}
+
+@mixin beforeComponentPadding {
+  padding-top: 24px;
+
+  @include mobile {
+    padding-top: 16px;
+  }
+}
+
+@mixin equalPadding {
+  padding: 0px 24px;
+
+  @include mobile {
+    padding: 0px 16px;
+  }
+}
+
+@mixin labelPadding {
+  padding-bottom: 4px;
+}
+
+//Margins
+@mixin afterComponentMargin {
+  margin-bottom: 24px;
+
+  @include mobile {
+    margin-bottom: 16px;
+  }
+}
+
+@mixin beforeComponentMargin {
+  margin-top: 24px;
+
+  @include mobile {
+    margin-top: 16px;
+  }
+}
+
+@mixin labelMargin {
+  margin-bottom: 4px;
+}
+
+@mixin equalMargin {
+  margin: 0px 24px;
+
+  @include mobile {
+    margin: 0px 16px;
+  }
+}
+
 //Iconagraphy
 //Action
 @mixin editIcon {
@@ -162,6 +220,8 @@ $red: #c94515;
   background-color: $instock-indigo;
   border: 1px solid $instock-indigo;
   color: $white;
+  border-radius: 20px;
+  padding: 0px 16px;
 
   @include mobile {
     height: 32px;
@@ -178,8 +238,10 @@ $red: #c94515;
   height: 36px;
   width: auto;
   color: $cloud;
-  border-color: $cloud;
-  background-color: transparent;
+  border: 1px solid $cloud;
+  background-color: $white;
+  border-radius: 20px;
+  padding: 0px 16px;
 
   @include mobile {
     height: 32px;
@@ -196,8 +258,10 @@ $red: #c94515;
   height: 36px;
   width: auto;
   color: $white;
-  border-color: $red;
+  border: 1px solid $red;
   background-color: red;
+  border-radius: 20px;
+  padding: 0px 16px;
 
   @include mobile {
     height: 32px;
@@ -224,13 +288,13 @@ $red: #c94515;
 //Form Fields
 @mixin textField {
   height: 36px;
-  border-color: $cloud;
+  border: 2px solid $cloud;
   color: $cloud;
   border-radius: 20px;
   padding: 0px 16px;
   margin-top: 4px;
 
-  @include mmobile {
+  @include mobile {
     height: 32px;
     width: 100%;
   }
