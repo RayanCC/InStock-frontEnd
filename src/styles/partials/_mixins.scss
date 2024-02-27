@@ -1,0 +1,326 @@
+//Media Query
+$tablet: 768px;
+$desktop: 1280px;
+
+@mixin tablet {
+  @media screen and (min-width: 768px) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media screen and (min-width: 1280px) {
+    @content;
+  }
+}
+
+@mixin mobile {
+  @media screen and (max-width: 767px) {
+    @content;
+  }
+}
+//Type Kit
+@mixin pageHeader {
+  font-size: 32px;
+  line-height: 40px;
+
+  @include mobile {
+    font-size: 28px;
+    line-height: 36px;
+  }
+}
+
+@mixin subHeader {
+  font-size: 24px;
+  line-height: 32px;
+
+  @include mobile {
+    font-size: 20px;
+    line-height: 28px;
+  }
+}
+
+@mixin labelText {
+  font-size: 14px;
+  line-height: 22px;
+
+  @include mobile {
+    font-size: 13px;
+    line-height: 20px;
+  }
+}
+
+@mixin tableHeader {
+  font-size: 12px;
+  line-height: 18px;
+
+  @include mobile {
+    font-size: 11px;
+    line-height: 16px;
+  }
+}
+
+@mixin bodyLarge {
+  font-size: 16px;
+  line-height: 28px;
+
+  @include mobile {
+    font-size: 15px;
+    line-height: 26px;
+  }
+}
+
+@mixin bodyMedium {
+  font-size: 14px;
+  line-height: 22px;
+
+  @include mobile {
+    font-size: 13px;
+    line-height: 20px;
+  }
+}
+
+@mixin bodySmall {
+  font-size: 12px;
+  line-height: 18px;
+
+  @include mobile {
+    font-size: 11px;
+    line-height: 16px;
+  }
+}
+
+//Colors
+//Primary Colors
+$instock-black: #13182c;
+$instock-indigo: #2e66e5;
+$white: #ffffff;
+
+//Secondary Colors
+$slate: #5c667e;
+$cloud: #bdc5d5;
+
+//Background-Colors
+$graphite: #232940;
+$light-grey: #f7f8f9;
+
+//Supporting Colors
+$green: #158463;
+$red: #c94515;
+
+//Iconagraphy
+//Action
+@mixin editIcon {
+  fill: $instock-indigo;
+}
+
+@mixin deleteIcon {
+  fill: $red;
+}
+
+@mixin closeIcon {
+  fill: $instock-black;
+}
+
+@mixin searchIcon {
+  fill: $slate;
+}
+
+//Navigation
+@mixin chevronIcon {
+  fill: $instock-indigo;
+}
+
+@mixin backArrow {
+  fill: $instock-indigo;
+}
+
+@mixin sortIcon {
+  fill: $slate;
+
+  &:active {
+    fill: $slate;
+    &:active {
+      fill: $instock-indigo;
+    }
+  }
+}
+
+@mixin dropdownIcon {
+  fill: $instock-indigo;
+}
+
+//Notifications
+@mixin error {
+  fill: $red;
+}
+
+//Call to Actions
+@mixin primaryButton {
+  height: 36px;
+  width: auto;
+  background-color: $instock-indigo;
+  border: 1px solid $instock-indigo;
+  color: $white;
+
+  @include mobile {
+    height: 32px;
+    width: 100%;
+  }
+
+  &:hover {
+    background-color: $graphite;
+    border: 1px solid $graphite;
+  }
+}
+
+@mixin secondaryButton {
+  height: 36px;
+  width: auto;
+  color: $cloud;
+  border-color: $cloud;
+  background-color: transparent;
+
+  @include mobile {
+    height: 32px;
+    width: 100%;
+  }
+
+  &:hover {
+    border: 1px solid $instock-indigo;
+    color: $instock-indigo;
+  }
+}
+
+@mixin deleteButton {
+  height: 36px;
+  width: auto;
+  color: $white;
+  border-color: $red;
+  background-color: red;
+
+  @include mobile {
+    height: 32px;
+    width: 100%;
+  }
+
+  &:hover {
+    border-color: $graphite;
+    color: $white;
+    background-color: $graphite;
+  }
+}
+
+@mixin textLink {
+  color: $instock-indigo;
+  text-decoration: none;
+  padding-right: 4px;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+//Form Fields
+@mixin textField {
+  height: 36px;
+  border-color: $cloud;
+  color: $cloud;
+  border-radius: 20px;
+  padding: 0px 16px;
+  margin-top: 4px;
+
+  @include mmobile {
+    height: 32px;
+    width: 100%;
+  }
+
+  &:active {
+    border-color: $instock-indigo;
+    color: $instock-black;
+  }
+
+  &:required {
+    border-color: $red;
+  }
+}
+
+@mixin dropDown {
+  height: 36px;
+  border-color: $cloud;
+  color: $cloud;
+  border-radius: 20px;
+  padding: 0px 16px;
+  margin-top: 4px;
+
+  @include mobile {
+    height: 32px;
+    width: 100%;
+  }
+
+  &:active {
+    border-color: $instock-indigo;
+    color: $instock-black;
+  }
+
+  &:required {
+    border-color: $red;
+  }
+}
+
+@mixin searchField {
+  height: 36px;
+  border-color: $cloud;
+  color: $cloud;
+  border-radius: 20px;
+  padding: 0px 16px;
+  margin-top: 4px;
+
+  @include mobile {
+    height: 32px;
+    width: 100%;
+  }
+
+  &:active {
+    border-color: $instock-indigo;
+    color: $instock-black;
+  }
+}
+
+//Selection Controls
+@mixin status {
+  color: $cloud;
+  border-color: $cloud;
+  margin-top: 4px;
+  &:checked {
+    color: $instock-indigo;
+    border-color: $instock-indigo;
+  }
+}
+
+//Tags
+@mixin outOfStock {
+  background-color: opacify($color: $red, $amount: 7);
+  color: $red;
+  border-radius: 20px;
+  height: 26px;
+  width: auto;
+  padding: 0px 8px;
+
+  @include mobile {
+    height: 24px;
+  }
+}
+
+@mixin inStock {
+  background-color: opacify($color: $green, $amount: 7);
+  color: $green;
+  border-radius: 20px;
+  height: 26px;
+  width: auto;
+  padding: 0px 8px;
+
+  @include mobile {
+    height: 24px;
+  }
+}
