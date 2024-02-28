@@ -1,7 +1,7 @@
 import './warehouseDetails.scss';
-import arrowBackIcon from '../../Assets/Icons/arrow_back-24px.svg';
-import editIcon from '../../Assets/Icons/edit-24px.svg';
-import deleteIcon from '../../Assets/Icons/delete_outline-24px.svg';
+import arrowBackIcon from '../../assets/icon/arrow_back-24px.svg';
+import editIcon from '../../assets/icon/edit-24px.svg';
+import deleteIcon from '../../assets/icon/delete_outline-24px.svg';
 import axios from 'axios';
 import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
