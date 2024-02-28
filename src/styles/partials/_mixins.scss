@@ -390,3 +390,12 @@ $red: #c94515;
     height: 24px;
   }
 }
+
+//Albin
+
+@mixin flex-box($direction, $justifyContent, $align){
+  display:flex;
+  flex-direction:$direction;
+  justify-content: $justifyContent;
+  align-items: $align;
+}
