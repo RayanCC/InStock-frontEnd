@@ -1,59 +1,59 @@
 @import "../../styles/partials/mixins";
 
-.warehouse__container {
-  border-bottom: 1px solid $slate;
-  height: auto;
-  &--grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+.warehouseContainer {
+  margin: 0 16px;
+  list-style: none;
+  box-shadow: 0 2px 5px 0 rgba(19,24,44, 0.1);
 
-    @include tablet {
-      display: flex;
-      align-items: center;
-    }
-
-    &-warehouse {
-      @include tablet {
-        display: flex;
-        flex-direction: row;
-      }
-    }
-
-    &-info {
-      @include tablet {
-        display: flex;
-      }
-    }
-
-    &.icon {
-      display: grid;
-    }
+  li {
+    border-bottom: 1px solid $cloud;
   }
 
-  &--flex {
-    display: flex;
-    align-items: center;
+  h3 {
+    font-weight: 600;
+    @include labelText;
+    color: $instock-indigo;
   }
-
-  &--title {
+  
+  h4 {
+    font-weight: 600;
     @include tableHeader;
     color: $slate;
   }
 
-  &--btn {
-    @include textLink;
-    @include labelText;
-  }
-
-  &--text {
+  p {
+    font-weight: 400;
+    @include bodyMedium;
     color: $instock-black;
-    @include bodySmall;
   }
+}
 
-  &--icon {
-    &.edit {
-      float: right;
-      fill: black !important;
-    }
+.warehouseContainer_top {
+  display: flex;
+  padding-top:16px;
+  padding-bottom: 16px;
+  .warehouseNameContainer {
+    flex: 0 1 45%;
+    padding-left: 24px;
+  }
+  .warehouseName{
+    display: flex;
+  }
+}
+
+.warehouseContainer_mid {
+  display: flex;
+  padding-bottom: 16px;
+  .warehouseAddress {
+    flex: 0 1 45%;
+    padding-left: 24px;
+  }
+}
+
+.warehouseIcon {
+  display: flex;
+  &__delete {
+    padding-left: 24px;
+    flex: 0 1 80%;
   }
 }

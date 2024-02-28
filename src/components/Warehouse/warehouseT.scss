@@ -1,0 +1,133 @@
+@import "../../styles/partials/mixins";
+
+.containerHeader {
+  display: flex;
+  align-items: center;
+  background-color: #f7f8f9b2;
+  padding: 16px 16px;
+
+  h4 {
+    font-weight: 600;
+    @include tableHeader;
+    color: $slate;
+    display: flex;
+    align-items: center;
+  }
+  &__warehouse {
+    width: 150px;
+    @include desktop {
+      width: 240px;
+    }
+  }
+  &__address {
+    width: 19%;
+    @include desktop {
+      width: 25.5%;
+    }
+  }
+  &__contactName {
+    width: 160px;
+    @include desktop {
+      width: 250px;
+    }
+  }
+  &__contactInfo {
+    width: 200px;
+    @include desktop {
+      width: 350px;
+    }
+  }
+}
+
+.container {
+  margin: 0 16px;
+  list-style: none;
+  box-shadow: 0 2px 5px 0 rgba(19, 24, 44, 0.1);
+  @include desktop {
+    margin: 0 64px;
+  }
+
+  ul {
+    list-style: none;
+  }
+
+  li {
+    border-bottom: 1px solid $cloud;
+  }
+
+  h3 {
+    font-weight: 600;
+    @include labelText;
+    color: $instock-indigo;
+  }
+
+  h4 {
+    font-weight: 600;
+    @include tableHeader;
+    color: $slate;
+  }
+
+  p {
+    font-weight: 400;
+    @include bodyMedium;
+    color: $instock-black;
+  }
+}
+
+.warehouseNameT {
+  display: flex;
+  width: 150px;
+  @include desktop {
+    width: 240px;
+  }
+}
+
+.warehouseIcon {
+  display: flex;
+}
+
+.warehouseTabletContainer {
+  display: flex;
+  align-items: center;
+  padding: 16px 0;
+  @include desktop {
+    padding-right: 16px;
+  }
+
+  h3 {
+    padding-left: 16px;
+    @include labelText;
+  }
+
+  .warehouseAddressT {
+    width: 18%;
+    p {
+      width: 100px;
+    }
+    @include desktop {
+      p {
+        width: 100%;
+      }
+      width: 25%;
+    }
+  }
+  .contactNameT {
+    width: 160px;
+    @include desktop {
+      width: 250px;
+    }
+  }
+  .contactPhoneEmailT {
+    width: 200px;
+    @include desktop {
+      width: 350px;
+    }
+  }
+}
+
+.warehouseIconT {
+  display: flex;
+}
+.warehouseIcon__deleteT {
+  padding-right: 8px;
+}
