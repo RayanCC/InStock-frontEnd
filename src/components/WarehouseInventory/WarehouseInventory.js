@@ -1,7 +1,7 @@
 import React from 'react';
 import './warehouseInventory.scss'
-import deleteIcon from '../../Assets/Icons/delete_outline-24px.svg';
-import editIcon from '../../Assets/Icons/edit-24px.svg';
+import deleteIcon from '../../assets/icon/delete_outline-24px.svg';
+import editIcon from '../../assets/icon/edit-24px.svg';
 
 export const WarehouseInventory = ({Inventory}) => {
 
