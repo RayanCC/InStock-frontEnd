@@ -3,16 +3,22 @@
 .detailsContainer{
     background-color: $light-grey;
     padding: 1rem;
+    color: $instock-black;
     @include flex-box(column,flex-start,flex-start);
     &__headSection{
         @include flex-box(column,center,flex-start);
         width:100%;
+        margin-bottom: 1rem;
     }
-    &__headSection-warehouseNameBox{
+    &__headSection-warehouseBox{
         @include flex-box(row,flex-start,flex-start);
         width:100%;
         padding-bottom: 1rem;
         border-bottom: 2px solid $cloud;
+    }
+    &__headSection-warehouseNameBox{
+        @include flex-box(row,flex-start,flex-start);
+        width:100%;
     }
     &__headSection-warehouseNameBox--name{
         color:$instock-black;
@@ -32,14 +38,24 @@
         padding-bottom: 1rem;
         font-size: 13px;
         border-bottom: 2px solid $cloud;
-
-
         width:100%;
         @include flex-box(column,flex-start,flex-start);
 
+        @include tablet{
+            @include flex-box(row,flex-start,flex-start);
+        }
+        @include desktop{
+            @include flex-box(row,flex-start,flex-start);
+        }
     }
     &__headSection-warehouseDetails-addressInfo{
         padding-bottom: 1rem;
+        padding-top: 1rem;
+        @include tablet{
+            width:100%;        }
+        @include desktop{
+            width:100%;
+        }
     }
     &__headSection-warehouseDetails-info-lbl{
         color:$slate;
@@ -60,6 +76,9 @@
     }
     &__main-headingSection--heading{
         width:20%;
+        @include flex-box(row,flex-start,flex-start);
+        color: $slate;
+
     }
 }
 @media (max-width: 768px) {
