@@ -1,0 +1,44 @@
+@import "../../styles/partials/mixins.scss";
+
+.flex__container {
+  display: flex;
+  align-items: center;
+  width: 100%;
+
+  &--btn {
+    border: none;
+    background-color: unset;
+    padding-right: 4px;
+  }
+
+  &--title {
+    @include pageHeader;
+  }
+
+  &--div-one {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+
+  &--div-two {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: row;
+    align-items: center;
+
+    @include tablet {
+      @include primaryButton;
+
+      button svg path {
+        fill: $white;
+      }
+    }
+  }
+
+  &--btn {
+    background-color: unset;
+  }
+}

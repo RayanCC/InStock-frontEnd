@@ -1,0 +1,113 @@
+@import "../../styles/partials/mixins.scss";
+
+.search__container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  justify-content: center;
+
+  &--btn {
+    @include primaryButton;
+
+    &-div {
+      @include afterComponentMargin;
+    }
+  }
+
+  &--input {
+    @include searchField;
+    @include bodySmall;
+  }
+
+  &--search {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    @include afterComponentMargin;
+    &-bar-div {
+      display: flex;
+      width: 100%;
+
+      button {
+        background-color: unset;
+        border: none;
+        margin-left: -33px;
+        padding: 4px;
+        display: flex;
+        align-items: center;
+      }
+    }
+    &-icon-div {
+      position: absolute;
+      right: 16px;
+      padding-bottom: 0px;
+    }
+  }
+
+  &--title {
+    @include pageHeader;
+
+    &-div {
+      @include beforeComponentPadding;
+      @include afterComponentPadding;
+      display: flex;
+      align-items: center;
+    }
+  }
+
+  @include tablet {
+    display: flex;
+    flex-direction: row;
+
+    &--search {
+      width: auto;
+      @include beforeComponentMargin;
+    }
+
+    &--btn {
+      @include beforeComponentMargin;
+    }
+
+    .flex__container {
+      &_two {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+
+        div.search__container {
+          &--search {
+            padding-right: 24px;
+
+            input {
+              width: 100%;
+            }
+          }
+        }
+      }
+    }
+
+    @include desktop {
+      .flex__container {
+        &_one {
+          width: 100%;
+        }
+
+        &_two {
+          width: 100%;
+
+          div.search__container {
+            &--search {
+              padding-right: 24px;
+              width: 100%;
+
+              input {
+                width: 100%;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
