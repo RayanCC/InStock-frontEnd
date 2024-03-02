@@ -1,0 +1,55 @@
+@import "../../styles/partials/mixins.scss";
+
+.modal__container {
+  z-index: 1000;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+
+  &--div-one {
+    display: flex;
+    width: 100%;
+    justify-content: flex-end;
+    @include beforeComponentMargin;
+  }
+
+  &--div-three {
+    display: flex;
+    width: 100%;
+    justify-content: flex-end;
+    @include beforeComponentMargin;
+  }
+
+  &--title {
+    @include pageHeader;
+    @include beforeComponentPadding;
+  }
+
+  &--body {
+    @include bodyLarge;
+    @include beforeComponentPadding;
+    @include afterComponentPadding;
+  }
+
+  @include tablet {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+  }
+}
+
+.delete-btn {
+  @include deleteButton;
+}
+
+.cancel-btn {
+  @include secondaryButton;
+  margin-right: 16px;
+  @include tablet {
+    margin-right: 24pxpx;
+  }
+}

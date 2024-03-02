@@ -1,0 +1,55 @@
+@import "../../styles/partials/mixins";
+
+table {
+    border-collapse: collapse;
+    width: 94%;
+    list-style: none;
+    margin-left: 24px;
+    box-shadow: 0 2px 5px 0 rgba(19, 24, 44, 0.1);
+    @include desktop {
+        width: 96%;
+    }
+}
+
+th {
+    text-align: left;
+    @include tableHeader;
+    font-weight: 600;
+    color: $slate;
+    padding: 8px 0;
+    padding-left: 16px;
+}
+
+.inventorybutton {
+    display: flex;
+    &__delete {
+        padding-right: 12px;
+        @include desktop {
+            padding-right: 24px;
+        }
+    }
+}
+
+.headerIcon {
+    vertical-align: bottom;
+}
+
+.inventoryHeader {
+    background-color: #f7f8f9b2;
+}
+
+.itemNameIcon {
+    vertical-align: bottom;
+}
+
+.inventorySection {
+    border-bottom: 1px solid $cloud;
+    td {
+        padding: 8px 16px;
+        @include labelText;
+    }
+    .itemName {
+        color: $instock-indigo;
+        font-weight: 600;
+    }
+}
