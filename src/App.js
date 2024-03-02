@@ -5,6 +5,8 @@ import WarehouseB from "./components/Warehouse/WarehouseB";
 import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
 import WarehouseDetail from "./components/warehouse_detail/WarehouseDetails";
+import "./styles/global.scss";
+import { InventoryDetails } from "./components/InventoryDetails/InventoryDetails";
 import InventoryLayOut from "./components/InventoryLayOut/InventoryLayOut";
 import "./styles/global.scss";
 import DeleteModal from "./components/DeleteModal/DeleteModal";
@@ -14,6 +16,7 @@ function App() {
     <BrowserRouter>
       <Header />
       <WarehouseDetail warehouseId="1" />
+      <InventoryDetails inventoryId="1" />
       <Routes>
         <Route path="/" element={<Warehouses />} />
         <Route path="/inventory" element={<Inventory />} />

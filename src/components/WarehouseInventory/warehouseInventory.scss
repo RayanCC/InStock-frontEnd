@@ -5,6 +5,7 @@
     @include flex-box(column,flex-start,flex-start);
     padding-top: 1rem;
     width:100%;
+    color:$instock-black;
     &__tabdesk{
         @include flex-box(row,flex-start,flex-start);
         width:100%;
@@ -62,4 +63,13 @@
         @include flex-box(column,space-between,center);
 
     }
+  }
+  .statusColour{
+    font-weight: bold;
+  }
+  .InventoryName{
+    color:$instock-indigo;
+    font-weight: bold;
+    @include flex-box(row,flex-start,center);
+
   }
