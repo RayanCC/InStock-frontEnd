@@ -1,0 +1,112 @@
+@use '../../styles/partials/mixins' as *;
+
+.inventoryContainer{
+    background-color: $light-grey;
+    padding: 1rem;
+    color: $instock-black;
+    @include flex-box(column,flex-start,flex-start);
+    &__headSection{
+        @include flex-box(column,center,flex-start);
+        width:100%;
+        margin-bottom: 1rem;
+    }
+    &__headSection-InventoryBox{
+        @include flex-box(row,flex-start,flex-start);
+        width:100%;
+        padding-bottom: 1rem;
+        border-bottom: 2px solid $cloud;
+    }
+    &__headSection-InventoryNameBox{
+        @include flex-box(row,flex-start,flex-start);
+        width:100%;
+    }
+    &__headSection-warehouseNameBox--name{
+        color:$instock-black;
+        padding-left:.3rem;
+    }
+    &__headSection-InventoryNameBox-editbox{
+        @include flex-box(column,flex-end,flex-start);
+        background-color: $instock-indigo;
+        border-radius: 60%;
+        padding:10px;
+        @include tablet{
+            @include flex-box(row,flex-end,flex-start);
+
+            border-radius: 10%;
+        }
+        @include desktop{
+            @include flex-box(row,flex-end,flex-start);
+            border-radius: 10%;
+            color:$light-grey;
+        }
+    }
+    &__headSection-InventoryNameBox--edit{
+        path{fill:$white !important;}
+    }
+    &__headSection-InventoryNameBox-editbox-text{
+        padding-left: .3rem;
+        color:$light-grey;
+    }
+    &__headSection-inventoryDetails{
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+        font-size: 13px;
+        // border-bottom: 2px solid $cloud;
+        width:100%;
+        @include flex-box(column,flex-start,flex-start);
+        @include tablet{
+            @include flex-box(row,flex-start,flex-start);
+        }
+        @include desktop{
+            @include flex-box(row,flex-start,flex-start);
+        }
+    }
+    &__headSection-InventoryDetails-itemInfo{
+        padding-bottom: 1rem;
+        padding-top: 1rem;
+        @include tablet{
+            width:100%;        }
+        @include desktop{
+            width:100%;
+        }
+    }
+    &__headSection-inventoryDetails-Box{
+        @include flex-box(column,flex-start,flex-start);
+        width:100%;
+        @include tablet{
+            border-left: 2px solid $cloud;
+            padding-left: 2rem;
+        }
+            @include desktop{
+                border-left: 2px solid $cloud;
+                padding-left: 2rem;
+
+        }
+    }
+    &__headSection-InventoryDetails-info-lbl{
+        color:$slate;
+        padding-bottom: .2rem;
+    }
+    &__headSection-InventoryDetails-InfoBox{
+        padding-top: 1rem;
+        width:100%;
+        @include flex-box(row,flex-start,flex-start);
+    }
+    &__headSection-InventoryDetails-InfoBox-Info{
+        @include flex-box(column,flex-start,flex-start);
+        width:50%; 
+    }
+    &__headSection-InventoryDetails-itemInfo--description{
+        margin-bottom:.7rem; 
+    }
+    &__headSection-InventoryDetails-InfoBox--quantity{
+        margin-bottom:.7rem; 
+
+    }
+}
+
+@media(max-width: 768px){
+    .inventoryContainer__headSection-InventoryNameBox-editbox-text{
+        display:none;
+    }
+}

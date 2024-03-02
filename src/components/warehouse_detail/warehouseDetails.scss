@@ -25,13 +25,29 @@
         padding-left:.3rem;
     }
     &__headSection-warehouseNameBox-editbox{
-        @include flex-box(row,flex-end,flex-start);
-        //background-color: $instock-indigo;
+        @include flex-box(column,flex-end,flex-start);
+        background-color: $instock-indigo;
         border-radius: 60%;
-        width: 100%;
+        padding:10px;
+        @include tablet{
+            @include flex-box(row,flex-end,flex-start);
+
+            border-radius: 10%;
+        }
+        @include desktop{
+            @include flex-box(row,flex-end,flex-start);
+            border-radius: 10%;
+            color:$light-grey;
+        }
     }
+
     &__headSection-warehouseNameBox--edit{
-        color:$white;
+        path{fill:$white !important;}
+    }
+    &__headSection-warehouseNameBox-editbox-text{
+        padding-left: .3rem;
+        color:$light-grey;
+
     }
     &__headSection-warehouseDetails{
         padding-top: 1rem;
@@ -78,11 +94,15 @@
         width:20%;
         @include flex-box(row,flex-start,flex-start);
         color: $slate;
-
     }
 }
 @media (max-width: 768px) {
     .detailsContainer__main-headingSection {
       display: none; /* Hide the heading section */
+    }
+}
+@media(max-width: 768px){
+    .detailsContainer__headSection-warehouseNameBox-editbox-text{
+        display:none;
     }
 }
