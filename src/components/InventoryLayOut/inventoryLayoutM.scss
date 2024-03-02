@@ -1,0 +1,64 @@
+@import "../../styles/partials/mixins";
+
+.inventoryContainer {
+    margin: 0 16px;
+    list-style: none;
+    box-shadow: 0 2px 5px 0 rgba(19,24,44, 0.1);
+    
+    li {
+        border-bottom: 1px solid $cloud;
+        padding-left: 16px
+      }
+
+    h4 {
+        @include tableHeader;
+        color: $slate;
+    }
+    p {
+        @include labelText;
+        padding-top: 8px;
+    }
+}
+
+.inventoryItem__name {
+    color: $instock-indigo;
+    font-weight: 600;
+}
+
+.inventoryTop {
+    display: flex;
+    justify-content: flex-start;
+    padding: 16px 0;
+}
+
+.inventoryItem {
+    flex: 0 1 50%;
+
+    &__name {
+        display: flex;
+    }
+}
+
+.inventoryMid {
+    display: flex;
+    justify-content: flex-start;
+}
+
+.inventoryMid__category {
+    flex: 0 1 50%;
+}
+
+.inventoryBottom{
+    display: flex;
+    padding: 16px 0;
+}
+.filler {
+    flex: 0 1 50%;
+}
+
+.inventoryIcon {
+    display: flex;
+    justify-content: space-between;
+    padding-right: 24px;
+    padding-bottom: 16px;
+}
