@@ -7,7 +7,7 @@ const SearchHeading = ({ activity }) => {
     <div className="search__container">
       <div className="flex__container_one">
         <div className="search__container--title-div">
-          <h1 className="search__container--title">Warehouses</h1>
+          <h1 className="search__container--title">{activity}</h1>
         </div>
       </div>
 
@@ -32,9 +32,7 @@ const SearchHeading = ({ activity }) => {
         </div>
 
         <div className="search__container--btn-div">
-          <button className="search__container--btn">
-            + Add Warehouse{activity}
-          </button>
+          <button className="search__container--btn">+ Add {activity}</button>
         </div>
       </div>
     </div>

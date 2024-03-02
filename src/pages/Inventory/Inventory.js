@@ -1,10 +1,13 @@
 import React from "react";
+import InventoreyLayOut from "../../components/InventoryLayOut/InventoryLayOut";
 
 const Inventory = () => {
   return (
-    <div>
-      <h1>Inventory</h1>
-    </div>
+    <>
+      <main>
+        <InventoreyLayOut />
+      </main>
+    </>
   );
 };
 

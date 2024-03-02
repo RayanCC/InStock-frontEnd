@@ -1,10 +1,13 @@
 import React from "react";
+import WarehouseT from "../../components/Warehouse/WarehouseT";
 
 const Warehouses = () => {
   return (
-    <div>
-      <h1>Warehouses</h1>
-    </div>
+    <>
+      <main>
+        <WarehouseT />
+      </main>
+    </>
   );
 };
 
