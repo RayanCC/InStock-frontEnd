@@ -4,8 +4,8 @@ import Inventory from "./pages/Inventory/Inventory";
 import WarehouseB from "./components/Warehouse/WarehouseB";
 import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
-import WarehouseDetail from "./components/warehouse_detail/WarehouseDetails"
-
+import WarehouseDetail from "./components/warehouse_detail/WarehouseDetails";
+import InventoryLayOut from "./components/InventoryLayOut/InventoryLayOut";
 import "./styles/global.scss";
 
 function App() {
@@ -18,6 +18,7 @@ function App() {
         <Route path="/inventory" element={<Inventory />} />
       </Routes>
       <WarehouseB />
+      <InventoryLayOut />
       <Footer />
     </BrowserRouter>
   );
