@@ -7,6 +7,7 @@ import Footer from "./components/Footer/Footer";
 import WarehouseDetail from "./components/warehouse_detail/WarehouseDetails";
 import InventoryLayOut from "./components/InventoryLayOut/InventoryLayOut";
 import "./styles/global.scss";
+import DeleteModal from "./components/DeleteModal/DeleteModal";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
         <Route path="/inventory" element={<Inventory />} />
       </Routes>
       <WarehouseB />
+      <DeleteModal />
       <InventoryLayOut />
       <Footer />
     </BrowserRouter>
