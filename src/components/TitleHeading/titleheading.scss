@@ -3,6 +3,12 @@
 .flex__container {
   display: flex;
   align-items: center;
+  border-bottom: 1px solid $slate;
+  padding: 24px;
+
+  @include mobile {
+    padding: 16px;
+  }
 
   &--btn {
     border: none;
