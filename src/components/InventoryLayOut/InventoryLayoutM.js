@@ -34,6 +34,11 @@ const InventoryLayoutM = () => {
       });
   }, []);
 
+  const getStatusColor = (status) => {
+    return status === 'In Stock' ? 'instockColor' : 'outofstockColor';
+  };
+
+
   return (
     <div>
       <ul className="inventoryContainer">
@@ -61,7 +66,7 @@ const InventoryLayoutM = () => {
 
               <div>
               <h4>Status</h4>
-              <p>{item.status}</p>
+              <p className={getStatusColor(item.status)}>{item.status}</p>
               </div>
             </div>
 
