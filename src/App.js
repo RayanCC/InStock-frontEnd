@@ -10,20 +10,22 @@ import { InventoryDetails } from "./components/InventoryDetails/InventoryDetails
 import InventoryLayOut from "./components/InventoryLayOut/InventoryLayOut";
 import "./styles/global.scss";
 import DeleteModal from "./components/DeleteModal/DeleteModal";
+import EditInventoryItem from "./components/EditInventoryItem/EditInventoryItem";
 
 function App() {
   return (
     <BrowserRouter>
       <Header />
-      <WarehouseDetail warehouseId="1" />
-      <InventoryDetails inventoryId="1" />
+      {/* <WarehouseDetail warehouseId="1" />
+      <InventoryDetails inventoryId="1" /> */}
       <Routes>
         <Route path="/" element={<Warehouses />} />
         <Route path="/inventory" element={<Inventory />} />
       </Routes>
-      <WarehouseB />
+      {/* <WarehouseB />
       <DeleteModal />
-      <InventoryLayOut />
+      <InventoryLayOut /> */}
+      {<EditInventoryItem />}
       <Footer />
     </BrowserRouter>
   );

@@ -290,8 +290,8 @@ $red: #c94515;
 //Form Fields
 @mixin textField {
   height: 36px;
-  border: 2px solid $cloud;
-  color: $cloud;
+  border: 1px solid $cloud;
+  color: $instock-black;
   border-radius: 20px;
   padding: 0px 16px;
   margin-top: 4px;
@@ -366,12 +366,13 @@ $red: #c94515;
 
 //Tags
 @mixin outOfStock {
-  background-color: opacify($color: $red, $amount: 7);
+  $redWithOpacity: rgba(255, 0, 0, 0.07); // Red color with 7% opacity
+  background-color: $redWithOpacity;
   color: $red;
   border-radius: 20px;
   height: 26px;
   width: auto;
-  padding: 0px 8px;
+  padding: 4px 8px;
 
   @include mobile {
     height: 24px;
@@ -379,12 +380,13 @@ $red: #c94515;
 }
 
 @mixin inStock {
-  background-color: opacify($color: $green, $amount: 7);
+  $greenWithOpacity: rgba(0, 255, 0, 0.07); 
+  background-color: $greenWithOpacity;
   color: $green;
   border-radius: 20px;
   height: 26px;
   width: auto;
-  padding: 0px 8px;
+  padding: 4px 8px;
 
   @include mobile {
     height: 24px;
@@ -399,3 +401,4 @@ $red: #c94515;
   justify-content: $justifyContent;
   align-items: $align;
 }
+

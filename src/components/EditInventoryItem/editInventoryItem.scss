@@ -1,0 +1,220 @@
+@import "../../styles/partials/mixins";
+
+.pageContainer {
+    margin: 0 16px;
+    box-shadow: 0 2px 5px 0 rgba(19,24,44, 0.1);
+    @include tablet {
+        margin: 0 32px;
+    }
+}
+
+.inventoryDropDownList__item {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-image: url('../../assets/icon/arrow_drop_down-24px.svg');
+    background-repeat: no-repeat;
+    background-position: right;
+    height: 36px;
+    border-color: $cloud;
+    color: $instock-black;
+    border-radius: 20px;
+    padding: 0px 16px;
+    margin-top: 4px;
+    margin-left: 16px;
+    width: 255px;
+    &:active {
+        border-color: $instock-indigo;
+        color: $instock-black;
+      }
+    
+      &:required {
+        border-color: $red;
+      }
+      &--availability {
+        margin-bottom: 16px;
+      }
+}
+
+
+
+.editInventoryHeader {
+    display: flex;
+    align-items: center;
+    padding-left: 16px;
+    padding-top: 16px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid $cloud;
+    h1 {
+        @include pageHeader;
+        
+    }
+    &__icon {
+        padding-right: 8px;
+    }
+}
+
+.itemDetailsContainer {
+    padding-bottom: 16px;
+    label {
+        padding-left: 18px;       
+    }
+    h2 {
+        @include subHeader;
+        padding: 16px 0 8px 16px;
+    }
+    h3 {
+        @include labelText;
+        padding: 8px 0 0 16px;
+    }
+
+    @include tablet {
+        padding-left: 16px;
+        margin-top: 16px;
+        margin-bottom: 16px;
+        flex: 0 0 50%;
+        border-right: 1px solid $cloud;
+    }
+}
+
+.textFiledName {
+    width: 245px;
+    border: 1px solid $cloud;
+    color: $instock-black;
+    border-radius: 20px;
+    padding-left: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    
+    &:active {
+        border-color: $instock-indigo;
+        color: $instock-black;
+      }
+    
+      &:required {
+        border-color: $red;
+      }
+}
+
+.textFiledName::placeholder {
+    @include bodyMedium;
+    color: $instock-black;
+}
+
+
+.textFiledDes {
+    width: 245px;
+    border: 1px solid $cloud;
+    color: $instock-black;
+    border-radius: 20px;
+    padding-top: 10px;
+    padding-bottom: 70px;
+    padding-left: 10px;
+    
+    &:active {
+        border-color: $instock-indigo;
+        color: $instock-black;
+      }
+      &:required {
+        border-color: $red;
+      }
+}
+
+.textFiledDes::placeholder {
+    @include bodyMedium;
+    color: $instock-black;
+}
+
+.itemAvailabilityContainer {
+    border-top: 1px solid $cloud;
+
+    h2 {
+        @include subHeader;
+        padding: 16px 0 8px 16px;
+    }
+    h3 {
+        @include labelText;
+        padding: 8px 0 0 16px;
+    }
+
+    @include tablet {
+        border: none;
+        margin-top:16px;
+        padding-left: 16px;
+    }
+}
+
+.statusButton {
+    display: flex;
+}
+
+.statusInstock {
+    display: flex;
+    align-items: center;
+    flex: 0 1 50%;
+    padding-left: 16px;
+    p {
+        @include labelText;
+        padding-left: 4px;
+    }
+}
+
+.statusOutOfStock {
+    display: flex;
+    align-items: center;
+    p {
+        @include labelText;
+        padding-left: 4px;
+    }
+}
+
+.itemDetailsButton {
+   display: flex;
+   background-color: rgba(247, 247, 247, 0.7);
+   padding: 16px 16px;
+   justify-content: space-between;
+   &__cancel {
+    width: 120px;
+   }
+   &__save {
+    width: 120px
+   }
+
+   @include tablet {
+    justify-content: flex-end
+   }
+}
+
+.ctaPrimary {
+    @include primaryButton;
+  }
+  
+  .ctaSecondary {
+    @include secondaryButton;
+  }
+
+  .breakpointContainer {
+    @include tablet {
+        display: flex;
+    }
+  }
+
+  .itemAvailabilityLocation {
+    @include tablet {
+        padding-top: 35px;
+    }
+  }
+
+  .itemQuantity__input {
+    margin-left: 16px;
+    border: 1px solid $cloud;
+    color: $instock-black;
+    border-radius: 20px;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    padding-left: 5px;
+    @include tablet {
+        padding-top: 6px;
+        padding-bottom: 6px;
+    }
+  }
