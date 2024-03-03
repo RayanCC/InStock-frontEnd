@@ -4,20 +4,20 @@ import Inventory from "./pages/Inventory/Inventory";
 import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
 import "./styles/global.scss";
+import WarehouseDetails from "./components/warehouse_detail/WarehouseDetails";
+import WarehouseForm from "./components/WarehouseForm/WarehouseForm";
+import DeleteModal from "./components/DeleteModal/DeleteModal";
 
 function App() {
   return (
     <BrowserRouter>
-      <header>
-        <Header />
-      </header>
       <Routes>
         <Route path="/" element={<Warehouses />} />
         <Route path="/inventory" element={<Inventory />} />
+        <Route path="/details/:wid" element={<WarehouseDetails />} />
+        <Route path="/edit/:wid" element={<WarehouseForm />} />
+        <Route path="/add" element={<WarehouseForm />} />
       </Routes>
-      <footer>
-        <Footer />
-      </footer>
     </BrowserRouter>
   );
 }

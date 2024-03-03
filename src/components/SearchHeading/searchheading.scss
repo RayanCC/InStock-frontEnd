@@ -5,6 +5,17 @@
   flex-direction: column;
   width: 100%;
   justify-content: center;
+  border-bottom: 1px solid $light-grey;
+
+  padding: 24px;
+
+  @include tablet {
+    width: auto;
+  }
+
+  @include mobile {
+    padding: 16px;
+  }
 
   &--btn {
     @include primaryButton;
