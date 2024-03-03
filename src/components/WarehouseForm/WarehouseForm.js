@@ -1,6 +1,6 @@
 import React from "react";
 import "./warehouseform.scss";
-const EditWarehouse = ({ activity }) => {
+const WarehouseForm = ({ activity }) => {
   return (
     <div className="content__container">
       <div>
@@ -98,4 +98,4 @@ const EditWarehouse = ({ activity }) => {
   );
 };
 
-export default EditWarehouse;
+export default WarehouseForm;

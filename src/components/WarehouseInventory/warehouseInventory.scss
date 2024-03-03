@@ -1,0 +1,65 @@
+@use '../../styles/partials/mixins' as *;
+
+
+  .main{
+    @include flex-box(column,flex-start,flex-start);
+    padding-top: 1rem;
+    width:100%;
+    &__tabdesk{
+        @include flex-box(row,flex-start,flex-start);
+        width:100%;
+    }
+    &__tabdesk--data{
+        width:100%;
+    }
+    &__tabdesk-content-iconbox--icon{
+        padding-right: 1rem;
+    }
+    &__mobile{
+        @include flex-box(column,space-between,center);
+        width:100%;
+        border-bottom: 2px solid $cloud;
+    }
+    &__mobile-content{
+        @include flex-box(row,space-between,flex-start);
+        width:100%;
+    }
+    &__mobile-content-box1{
+        width:50%;
+    }
+    &__mobile-content-box1-item{
+        padding-bottom: 1rem;
+    }
+    &__mobile--heading{
+        color:$slate;
+    }
+    &__mobile--itemName{
+        @include textLink();
+    }
+    &__mobile-content-iconbox{
+        width:100%;
+        @include flex-box(row,space-between,flex-start);
+        padding:1rem;
+
+    }
+}
+.main__tabdesk {
+    display: flex;
+    justify-content: flex-start;
+  }
+  
+  .main__mobile {
+    display: none;
+  }
+  
+  /* Media query for screens between 375px and 768px */
+  @media (max-width: 768px) {
+    .main__tabdesk {
+      display: none; /* Hide the heading section */
+    }
+  
+    .main__mobile {
+        @include flex-box(column,space-between,center);
+
+    }
+  }
