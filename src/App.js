@@ -7,6 +7,7 @@ import "./styles/global.scss";
 import WarehouseDetails from "./components/warehouse_detail/WarehouseDetails";
 import WarehouseForm from "./components/WarehouseForm/WarehouseForm";
 import DeleteModal from "./components/DeleteModal/DeleteModal";
+import EditInventoryItem from "./components/EditInventoryItem/EditInventoryItem";
 
 function App() {
   return (

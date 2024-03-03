@@ -1,3 +1,4 @@
+
 import "./warehouseDetails.scss";
 import arrowBackIcon from "../../assets/icon/arrow_back-24px.svg";
 import editIcon from "../../assets/icon/edit-24px.svg";
@@ -138,5 +139,6 @@ const WarehouseDetails = () => {
     </>
   );
 };
+
 
 export default WarehouseDetails;
