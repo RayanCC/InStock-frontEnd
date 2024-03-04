@@ -18,6 +18,7 @@ function App() {
         <Route path="/details/:wid" element={<WarehouseDetails />} />
         <Route path="/edit/:wid" element={<WarehouseForm />} />
         <Route path="/add" element={<WarehouseForm />} />
+        <Route path="/delete/:wid" element={<DeleteModal />} />
       </Routes>
     </BrowserRouter>
   );
