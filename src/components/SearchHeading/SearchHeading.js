@@ -1,6 +1,7 @@
 import React from "react";
 import "./searchheading.scss";
 import searchLogo from "../../assets/icon/search-24px.svg";
+import { Link } from "react-router-dom";
 
 const SearchHeading = ({ activity }) => {
   return (
@@ -32,7 +33,9 @@ const SearchHeading = ({ activity }) => {
         </div>
 
         <div className="search__container--btn-div">
-          <button className="search__container--btn">+ Add {activity}</button>
+          <Link to="/addwarehouse">
+            <button className="search__container--btn">+ Add {activity}</button>{" "}
+          </Link>
         </div>
       </div>
     </div>

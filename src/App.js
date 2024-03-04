@@ -8,6 +8,7 @@ import WarehouseDetails from "./components/warehouse_detail/WarehouseDetails";
 import WarehouseForm from "./components/WarehouseForm/WarehouseForm";
 import DeleteModal from "./components/DeleteModal/DeleteModal";
 import EditInventoryItem from "./components/EditInventoryItem/EditInventoryItem";
+import AddWarehouse from "./components/AddWarehouse/AddWarehouse";
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
         <Route path="/edit/:wid" element={<WarehouseForm />} />
         <Route path="/add" element={<WarehouseForm />} />
         <Route path="/delete/:wid" element={<DeleteModal />} />
+        <Route path="addwarehouse" element={<AddWarehouse />} />
       </Routes>
     </BrowserRouter>
   );

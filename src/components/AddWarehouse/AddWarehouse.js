@@ -1,6 +1,41 @@
 import React from "react";
 import "./addwarehouse.scss";
+import axios from "axios";
 const WarehouseForm = () => {
+  function handleSubmit(event) {
+    event.preventDefault();
+
+    const warehouseName = document.getElementById("warehouseName").value;
+    const warehouseAddress = document.getElementById("warehouseAddress").value;
+    const warehouseCity = document.getElementById("warehouseCity").value;
+    const warehouseCountry = document.getElementById("warehouseCountry").value;
+    const contactName = document.getElementById("contactName").value;
+    const contactPosition = document.getElementById("contactPosition").value;
+    const contactPhone = document.getElementById("contactPhone").value;
+    const contactEmail = document.getElementById("contactEmail").value;
+
+    const warehouseData = {
+      warehouse_name: warehouseName,
+      warehouse_address: warehouseAddress,
+      city: warehouseCity,
+      country: warehouseCountry,
+      contac_name: contactName,
+      contact_position: contactPosition,
+      contact_phone: contactPhone,
+      contact_email: contactEmail,
+    };
+
+    axios
+      .post("http://localhost:5050/instock/warehouse", warehouseData, {
+        headers: {
+          "Content-Type": "application/json",
+        },
+      })
+      .then((res) => {
+        console.log(res);
+      });
+  }
+
   return (
     <div className="content__container">
       <div>
@@ -18,6 +53,7 @@ const WarehouseForm = () => {
                 type="text"
                 placeholder="Warehouse Name"
                 className="warehouse__details--input"
+                id="warehouseName"
               />
             </div>
             <div>
@@ -28,6 +64,7 @@ const WarehouseForm = () => {
                 type="text"
                 placeholder="Warehouse Address"
                 className="warehouse__details--input"
+                id="warehouseAddress"
               />
             </div>
             <div>
@@ -36,6 +73,7 @@ const WarehouseForm = () => {
                 type="text"
                 placeholder="City"
                 className="warehouse__details--input"
+                id="warehouseCity"
               />
             </div>
             <div>
@@ -44,6 +82,7 @@ const WarehouseForm = () => {
                 type="text"
                 placeholder="Country"
                 className="warehouse__details--input"
+                id="warehouseCountry"
               />
             </div>
           </div>
@@ -57,6 +96,7 @@ const WarehouseForm = () => {
                 type="text"
                 placeholder="Contact Name"
                 className="contact__details--input"
+                id="contactName"
               />
             </div>
             <div>
@@ -65,6 +105,7 @@ const WarehouseForm = () => {
                 type="text"
                 placeholder="Position"
                 className="contact__details--input"
+                id="contactPosition"
               />
             </div>
             <div>
@@ -72,6 +113,7 @@ const WarehouseForm = () => {
               <input
                 type="text"
                 placeholder="Phone Number"
+                id="contactPhone"
                 className="contact__details--input"
               />
             </div>
@@ -81,6 +123,7 @@ const WarehouseForm = () => {
                 type="text"
                 placeholder="Email"
                 className="contact__details--input"
+                id="contactEmail"
               />
             </div>
           </div>
@@ -91,7 +134,9 @@ const WarehouseForm = () => {
           <button className="cancel__btn">Cancel</button>
         </div>
         <div>
-          <button className="action__btn">+ Add New Warehouse</button>
+          <button className="action__btn" onClick={handleSubmit}>
+            + Add New Warehouse
+          </button>
         </div>
       </div>
     </div>
