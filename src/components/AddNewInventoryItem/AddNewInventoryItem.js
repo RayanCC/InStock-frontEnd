@@ -1,6 +1,6 @@
 import React from "react";
 import "./addNewInventoryItem.scss";
-import { useState, useEffect} from "react";
+import { useState, useEffect } from "react";
 import axios from "axios";
 
 function AddNewInventoryItem() {
@@ -16,19 +16,16 @@ function AddNewInventoryItem() {
     }
   };
 
-
   const [formData, setFormData] = useState({
     item_name: "",
     description: "",
     category: "",
     status: "",
     quantity: 0,
-    warehouse_id: ""
+    warehouse_id: "",
   });
   const [warehouses, setWarehouses] = useState([]);
   const [categories, setCategories] = useState([]);
-
-
 
   useEffect(() => {
     // Fetch inventory data
@@ -36,7 +33,7 @@ function AddNewInventoryItem() {
       .get("http://localhost:5050/instock/inventory")
       .then((response) => {
         setCategories(response.data);
-        console.log(response.data)
+        console.log(response.data);
       })
       .catch((error) => {
         console.error("Error fetching inventory", error);
@@ -51,38 +48,31 @@ function AddNewInventoryItem() {
         response.data.forEach((warehouse) => {
           warehouseMap[warehouse.id] = warehouse.warehouse_name;
         });
-        
+
         setWarehouses(warehouseMap);
-        
       })
       .catch((error) => {
         console.error("Error fetching warehouses", error);
       });
   }, []);
-console.log(warehouses)
+  console.log(warehouses);
   const handleInputChange = (event) => {
     const { name, value } = event.target;
     setFormData({ ...formData, [name]: value });
   };
 
-
   const handleSubmit = (event) => {
     event.preventDefault();
 
-    axios.post("http://localhost:5050/instock/inventory", formData)
+    axios
+      .post("http://localhost:5050/instock/inventory", formData)
       .then((response) => {
         console.log("Item added successfully:", response.data);
-       
       })
       .catch((error) => {
         console.error("Error adding item:", error);
-       
       });
   };
-
-
-
-
 
   return (
     <div className="pageContainer">
@@ -148,17 +138,16 @@ console.log(warehouses)
                 <h3>Category</h3>
               </div>
               <div className="inventoryDropDownList"></div>
-              <select className="inventoryDropDownList__item"
+              <select
+                className="inventoryDropDownList__item"
                 name="category"
                 value={formData.category}
                 onChange={handleInputChange}
               >
-               <option value="">Please Select</option>
-               {categories.map((category) => (
-                <option key={category.id}>
-                    {category.category}
-                </option>
-               ))}
+                <option value="">Please Select</option>
+                {[...new Set(categories.map((category) => category.category))].map((uniqueCategory, index) => (
+    <option key={index}>{uniqueCategory}</option>
+  ))}
               </select>
             </div>
           </div>
@@ -213,18 +202,18 @@ console.log(warehouses)
                 <h3>Warehouse</h3>
               </div>
               <div>
-                <select className="inventoryDropDownList__item inventoryDropDownList__item--availability"
-                name="warehouse_id"
-                value={formData.warehouse_id}
-                onChange={handleInputChange}
+                <select
+                  className="inventoryDropDownList__item inventoryDropDownList__item--availability"
+                  name="warehouse_id"
+                  value={formData.warehouse_id}
+                  onChange={handleInputChange}
                 >
-                        <option value="">Please select</option>
-                        {categories.map((category) => (
-                            <option key={category.id} value={category.warehouse_id}>
-                                {warehouses[category.warehouse_id]}
-                            </option>
-                        ))}
-               
+                  <option value="">Please select</option>
+                  {Object.keys(warehouses).map((warehouseId) => (
+                    <option key={warehouseId} value={warehouseId}>
+                      {warehouses[warehouseId]}
+                    </option>
+                  ))}
                 </select>
               </div>
             </div>
@@ -238,7 +227,7 @@ console.log(warehouses)
           </div>
 
           <div className="itemDetailsButton__save">
-            <button className="ctaPrimary" type="button">
+            <button className="ctaPrimary" type="submit">
               + Add Item
             </button>
           </div>
