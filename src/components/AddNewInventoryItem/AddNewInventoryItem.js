@@ -33,7 +33,6 @@ function AddNewInventoryItem() {
       .get("http://localhost:5050/instock/inventory")
       .then((response) => {
         setCategories(response.data);
-        console.log(response.data);
       })
       .catch((error) => {
         console.error("Error fetching inventory", error);
@@ -55,7 +54,7 @@ function AddNewInventoryItem() {
         console.error("Error fetching warehouses", error);
       });
   }, []);
-  console.log(warehouses);
+
   const handleInputChange = (event) => {
     const { name, value } = event.target;
     setFormData({ ...formData, [name]: value });
@@ -63,6 +62,7 @@ function AddNewInventoryItem() {
 
   const handleSubmit = (event) => {
     event.preventDefault();
+    console.log(formData);
 
     axios
       .post("http://localhost:5050/instock/inventory", formData)
@@ -106,8 +106,9 @@ function AddNewInventoryItem() {
                     <textarea
                       className="addItemName"
                       type="text"
-                      name="name"
+                      name="item_name"
                       placeholder="Item Name"
+                      onChange={handleInputChange}
                     ></textarea>
                   </label>
                 </div>
@@ -127,6 +128,7 @@ function AddNewInventoryItem() {
                       type="text"
                       name="description"
                       placeholder="Please enter a brief item description..."
+                      onChange={handleInputChange}
                     ></textarea>
                   </label>
                 </div>
@@ -145,9 +147,11 @@ function AddNewInventoryItem() {
                 onChange={handleInputChange}
               >
                 <option value="">Please Select</option>
-                {[...new Set(categories.map((category) => category.category))].map((uniqueCategory, index) => (
-    <option key={index}>{uniqueCategory}</option>
-  ))}
+                {[
+                  ...new Set(categories.map((category) => category.category)),
+                ].map((uniqueCategory, index) => (
+                  <option key={index}>{uniqueCategory}</option>
+                ))}
               </select>
             </div>
           </div>
@@ -165,19 +169,27 @@ function AddNewInventoryItem() {
               <div className="statusButton">
                 <label className="statusInstock">
                   <input
+                    name="status"
                     type="radio"
                     value="instock"
                     checked={selectedOption === "instock"}
-                    onChange={handleOptionchange}
+                    onChange={(event) => {
+                        handleInputChange(event);
+                        handleOptionchange(event);
+                      }}
                   />
                   <p>In stock</p>
                 </label>
                 <label className="statusOutOfStock">
                   <input
+                  name="status"
                     type="radio"
                     value="Out of stock"
                     checked={selectedOption === "Out of stock"}
-                    onChange={handleOptionchange}
+                    onChange={(event) => {
+                        handleInputChange(event);
+                        handleOptionchange(event);
+                      }}
                   />
                   <p>Out of stock</p>
                 </label>
@@ -189,9 +201,9 @@ function AddNewInventoryItem() {
                   <h3>Quantity</h3>
                   <input
                     type="number"
-                    onChange={(event) => setQuantity(event.target.value)}
+                    onChange={handleInputChange}
                     className="itemQuantity__input"
-                    value={quantity}
+                    name="quantity"
                   />
                 </label>
               </div>
@@ -210,7 +222,7 @@ function AddNewInventoryItem() {
                 >
                   <option value="">Please select</option>
                   {Object.keys(warehouses).map((warehouseId) => (
-                    <option key={warehouseId} value={warehouseId}>
+                    <option key={warehouseId} value={warehouseId.warehouse_name}>
                       {warehouses[warehouseId]}
                     </option>
                   ))}
