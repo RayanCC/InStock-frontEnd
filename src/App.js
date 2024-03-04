@@ -10,7 +10,6 @@ import DeleteModal from "./components/DeleteModal/DeleteModal";
 import EditInventoryItem from "./components/EditInventoryItem/EditInventoryItem";
 import AddWarehouse from "./components/AddWarehouse/AddWarehouse";
 
-
 function App() {
   return (
     <BrowserRouter>
@@ -18,6 +17,7 @@ function App() {
         <Route path="/" element={<Warehouses />} />
         <Route path="/inventory" element={<Inventory />} />
         <Route path="/details/:wid" element={<WarehouseDetails />} />
+        <Route path="/edit-inventory/:iid" element={<EditInventoryItem />} />
         <Route path="/edit/:wid" element={<WarehouseForm />} />
         <Route path="/add" element={<WarehouseForm />} />
         <Route path="/delete/:wid" element={<DeleteModal />} />
