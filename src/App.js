@@ -10,6 +10,7 @@ import DeleteModal from "./components/DeleteModal/DeleteModal";
 import EditInventoryItem from "./components/EditInventoryItem/EditInventoryItem";
 import AddWarehouse from "./components/AddWarehouse/AddWarehouse";
 
+
 function App() {
   return (
     <BrowserRouter>
