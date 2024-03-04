@@ -1,0 +1,63 @@
+@import "../../styles/partials/mixins";
+
+.addInventoryHeader {
+  display: flex;
+  padding-left: 16px;
+  padding-top: 16px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid $cloud;
+  h1 {
+    @include pageHeader;
+  }
+  &__icon {
+    padding-right: 8px;
+  }
+
+  @include tablet {
+    align-items: center;
+  }
+}
+
+.addItemName {
+  width: 245px;
+  border: 1px solid $cloud;
+  color: $instock-black;
+  border-radius: 20px;
+  padding-left: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  &:active {
+    border-color: $instock-indigo;
+    color: $instock-black;
+  }
+
+  &:required {
+    border-color: $red;
+  }
+}
+
+.addItemName::placeholder {
+  @include bodyMedium;
+}
+
+.addItemDesc {
+  width: 245px;
+  border: 1px solid $cloud;
+  color: $instock-black;
+  border-radius: 20px;
+  padding-left: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  &:active {
+    border-color: $instock-indigo;
+    color: $instock-black;
+  }
+
+  &:required {
+    border-color: $red;
+  }
+}
+
+.addItemDesc::placeholder {
+  @include bodyMedium;
+}

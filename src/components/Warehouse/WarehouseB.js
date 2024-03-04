@@ -25,4 +25,4 @@ const WarehouseB = () => {
   )
 };
 
-export default WarehouseB
+export default WarehouseB;

@@ -35,6 +35,11 @@ const IventoryLayoutT = () => {
       });
   }, []);
 
+  const getStatusColor = (status) => {
+    return status === 'In Stock' ? 'instockColor' : 'outofstockColor';
+  };
+
+
   return (
     <table>
       <tr className="inventoryHeader">
@@ -140,7 +145,7 @@ const IventoryLayoutT = () => {
             </svg>
           </td>
           <td>{item.category}</td>
-          <td>{item.status}</td>
+          <td className={getStatusColor(item.status)}>{item.status}</td>
           <td>{item.quantity}</td>
           <td>{warehouses[item.warehouse_id]}</td>
           <td className="inventorybutton">

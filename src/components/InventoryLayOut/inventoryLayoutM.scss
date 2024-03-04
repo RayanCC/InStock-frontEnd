@@ -4,6 +4,7 @@
     margin: 0 16px;
     list-style: none;
     box-shadow: 0 2px 5px 0 rgba(19,24,44, 0.1);
+    align-items: unset;
     
     li {
         border-bottom: 1px solid $cloud;
@@ -61,4 +62,12 @@
     justify-content: space-between;
     padding-right: 24px;
     padding-bottom: 16px;
+}
+
+.instockColor {
+    @include inStock;
+}
+
+.outofstockColor {
+    @include outOfStock;
 }

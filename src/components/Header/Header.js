@@ -39,9 +39,7 @@ const Header = (setCurrent) => {
           </Link>
         </div>
       </div>
-      <div>
-        <SearchHeading activity={activeTab} />
-      </div>
+      <div>{/* <SearchHeading activity={activeTab} /> */}</div>
     </div>
   );
 };
