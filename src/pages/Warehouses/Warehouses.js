@@ -1,10 +1,18 @@
 import React from "react";
+import WarehouseT from "../../components/Warehouse/WarehouseT";
+import SearchHeading from "../../components/SearchHeading/SearchHeading";
+import Header from "../../components/Header/Header";
 
 const Warehouses = () => {
   return (
-    <div>
-      <h1>Warehouses</h1>
-    </div>
+    <>
+      <header>
+        <Header />
+      </header>
+      <main>
+        <WarehouseT />
+      </main>
+    </>
   );
 };
 

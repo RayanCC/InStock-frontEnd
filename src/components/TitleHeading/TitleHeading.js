@@ -1,10 +1,13 @@
 import React from "react";
 import "./titleheading.scss";
+import { useParams, Link } from "react-router-dom";
 
 const TitleHeading = ({ activity }) => {
+  const { wid } = useParams();
+
   return (
     <div className="flex__container">
-      <button className="flex__container--btn">
+      <Link className="flex__container--btn" to={`/details/${wid}`}>
         <svg
           width="24"
           height="24"
@@ -17,8 +20,8 @@ const TitleHeading = ({ activity }) => {
             fill="#2E66E6"
           />
         </svg>
-      </button>
-      <h1 className="flex__container--title">Edit Warehouse</h1>
+      </Link>
+      <h1 className="flex__container--title">{activity}</h1>
     </div>
   );
 };

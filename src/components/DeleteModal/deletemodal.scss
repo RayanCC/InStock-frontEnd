@@ -7,6 +7,11 @@
   display: flex;
   flex-direction: column;
   position: fixed;
+  padding: 24px;
+
+  @include mobile {
+    padding: 16px;
+  }
 
   &--div-one {
     display: flex;
@@ -34,7 +39,7 @@
   }
 
   @include tablet {
-    width: 100%;
+    width: auto;
     height: auto;
     display: flex;
     flex-direction: column;

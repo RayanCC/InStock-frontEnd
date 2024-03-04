@@ -1,13 +1,14 @@
 import React from "react";
 import "./searchheading.scss";
 import searchLogo from "../../assets/icon/search-24px.svg";
+import { Link } from "react-router-dom";
 
 const SearchHeading = ({ activity }) => {
   return (
     <div className="search__container">
       <div className="flex__container_one">
         <div className="search__container--title-div">
-          <h1 className="search__container--title">Warehouses</h1>
+          <h1 className="search__container--title">{activity}</h1>
         </div>
       </div>
 
@@ -32,9 +33,9 @@ const SearchHeading = ({ activity }) => {
         </div>
 
         <div className="search__container--btn-div">
-          <button className="search__container--btn">
-            + Add Warehouse{activity}
-          </button>
+          <Link to="/addwarehouse">
+            <button className="search__container--btn">+ Add {activity}</button>{" "}
+          </Link>
         </div>
       </div>
     </div>

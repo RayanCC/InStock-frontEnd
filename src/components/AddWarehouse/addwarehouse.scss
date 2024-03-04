@@ -1,0 +1,120 @@
+@import "../../styles/partials/mixins";
+
+.flex__container {
+  display: flex;
+  flex-direction: column;
+  border: 0px solid red;
+  padding: 0px 16px;
+  margin: 0px auto;
+  @include tablet {
+    flex-direction: row;
+    padding: 0px 24px;
+  }
+
+  div {
+    width: 100%;
+  }
+}
+
+.warehouse__details {
+  display: flex;
+  flex-direction: column;
+  border-bottom: 1px solid $slate;
+  margin: 0px auto;
+  width: 100%;
+
+  @include tablet {
+    border-right: 1px solid $slate;
+    border-right-width: 80%;
+    @include equalPadding;
+    border-bottom: unset;
+  }
+
+  div {
+    display: flex;
+    flex-direction: column;
+  }
+  &--title {
+    @include bodyLarge;
+    @include afterComponentPadding;
+    @include beforeComponentMargin;
+  }
+
+  &--label {
+    @include bodyMedium;
+  }
+
+  &--input {
+    @include textField;
+    @include bodySmall;
+    @include labelPadding;
+    @include afterComponentMargin;
+    color: $slate;
+    box-sizing: border-box;
+  }
+}
+
+.contact__details {
+  display: flex;
+  flex-direction: column;
+
+  div {
+    display: flex;
+    flex-direction: column;
+  }
+
+  @include tablet {
+    border-left: 1px solid $slate;
+    border-left-width: 80%;
+    @include equalPadding;
+  }
+
+  &--title {
+    @include bodyLarge;
+    @include afterComponentPadding;
+    @include beforeComponentMargin;
+  }
+
+  &--label {
+    @include bodyMedium;
+  }
+
+  &--input {
+    @include textField;
+    @include bodySmall;
+    @include labelPadding;
+    @include afterComponentMargin;
+    color: $slate;
+    box-sizing: border-box;
+  }
+}
+
+.action__container {
+  display: flex;
+  width: 100;
+  flex-direction: row;
+  justify-content: flex-end;
+  @include afterComponentPadding;
+  @include beforeComponentPadding;
+  background-color: $light-grey;
+
+  div {
+    @include mobile {
+      width: 100%;
+      @include equalPadding;
+    }
+
+    @include tablet {
+      padding-right: 24px;
+    }
+  }
+}
+
+.action__btn {
+  @include primaryButton;
+}
+
+.cancel__btn {
+  @include secondaryButton;
+}
+//
