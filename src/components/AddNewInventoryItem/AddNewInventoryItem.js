@@ -1,10 +1,12 @@
 import React from "react";
-import "./editInventoryItem.scss";
-import { useState } from "react";
+import "./addNewInventoryItem.scss";
+import { useState, useEffect} from "react";
+import axios from "axios";
 
-function EditInventoryItem() {
+function AddNewInventoryItem() {
   const [selectedOption, setSelectedOption] = useState("");
   const [showQuantityInput, setShowQuantityInput] = useState(false);
+  const [quantity, setQuantity] = useState(0);
   const handleOptionchange = (event) => {
     setSelectedOption(event.target.value);
     if (event.target.value === "instock") {
@@ -14,9 +16,77 @@ function EditInventoryItem() {
     }
   };
 
+
+  const [formData, setFormData] = useState({
+    item_name: "",
+    description: "",
+    category: "",
+    status: "",
+    quantity: 0,
+    warehouse_id: ""
+  });
+  const [warehouses, setWarehouses] = useState([]);
+  const [categories, setCategories] = useState([]);
+
+
+
+  useEffect(() => {
+    // Fetch inventory data
+    axios
+      .get("http://localhost:5050/instock/inventory")
+      .then((response) => {
+        setCategories(response.data);
+        console.log(response.data)
+      })
+      .catch((error) => {
+        console.error("Error fetching inventory", error);
+      });
+
+    // Fetch warehouse data
+    axios
+      .get("http://localhost:5050/instock/warehouse")
+      .then((response) => {
+        // Create a map of warehouse IDs to warehouse names
+        const warehouseMap = {};
+        response.data.forEach((warehouse) => {
+          warehouseMap[warehouse.id] = warehouse.warehouse_name;
+        });
+        
+        setWarehouses(warehouseMap);
+        
+      })
+      .catch((error) => {
+        console.error("Error fetching warehouses", error);
+      });
+  }, []);
+console.log(warehouses)
+  const handleInputChange = (event) => {
+    const { name, value } = event.target;
+    setFormData({ ...formData, [name]: value });
+  };
+
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+
+    axios.post("http://localhost:5050/instock/inventory", formData)
+      .then((response) => {
+        console.log("Item added successfully:", response.data);
+       
+      })
+      .catch((error) => {
+        console.error("Error adding item:", error);
+       
+      });
+  };
+
+
+
+
+
   return (
     <div className="pageContainer">
-      <div className="editInventoryHeader">
+      <div className="addInventoryHeader">
         <svg
           width="24"
           height="24"
@@ -30,9 +100,9 @@ function EditInventoryItem() {
             fill="#2E66E6"
           />
         </svg>
-        <h1>Edit Inventory Item</h1>
+        <h1>Add New Inventory Item</h1>
       </div>
-      <form>
+      <form onSubmit={handleSubmit}>
         <div className="breakpointContainer">
           <div className="itemDetailsContainer">
             <div className="itemDetailsHeader">
@@ -44,10 +114,10 @@ function EditInventoryItem() {
                 <div>
                   <label>
                     <textarea
-                      className="textFiledName"
+                      className="addItemName"
                       type="text"
                       name="name"
-                      placeholder="123"
+                      placeholder="Item Name"
                     ></textarea>
                   </label>
                 </div>
@@ -63,10 +133,10 @@ function EditInventoryItem() {
                 <div>
                   <label>
                     <textarea
-                      className="textFiledDes"
+                      className="addItemDesc"
                       type="text"
                       name="description"
-                      placeholder="456"
+                      placeholder="Please enter a brief item description..."
                     ></textarea>
                   </label>
                 </div>
@@ -78,10 +148,17 @@ function EditInventoryItem() {
                 <h3>Category</h3>
               </div>
               <div className="inventoryDropDownList"></div>
-              <select className="inventoryDropDownList__item">
-                <option value="option1">Option 1</option>
-                <option value="option2">Option 2</option>
-                <option value="option3">Option 3</option>
+              <select className="inventoryDropDownList__item"
+                name="category"
+                value={formData.category}
+                onChange={handleInputChange}
+              >
+               <option value="">Please Select</option>
+               {categories.map((category) => (
+                <option key={category.id}>
+                    {category.category}
+                </option>
+               ))}
               </select>
             </div>
           </div>
@@ -123,8 +200,9 @@ function EditInventoryItem() {
                   <h3>Quantity</h3>
                   <input
                     type="number"
-                    onChange={(event) => console.log(event.target.value)}
+                    onChange={(event) => setQuantity(event.target.value)}
                     className="itemQuantity__input"
+                    value={quantity}
                   />
                 </label>
               </div>
@@ -135,10 +213,18 @@ function EditInventoryItem() {
                 <h3>Warehouse</h3>
               </div>
               <div>
-                <select className="inventoryDropDownList__item inventoryDropDownList__item--availability">
-                  <option value="option1">Option 1</option>
-                  <option value="option2">Option 2</option>
-                  <option value="option3">Option 3</option>
+                <select className="inventoryDropDownList__item inventoryDropDownList__item--availability"
+                name="warehouse_id"
+                value={formData.warehouse_id}
+                onChange={handleInputChange}
+                >
+                        <option value="">Please select</option>
+                        {categories.map((category) => (
+                            <option key={category.id} value={category.warehouse_id}>
+                                {warehouses[category.warehouse_id]}
+                            </option>
+                        ))}
+               
                 </select>
               </div>
             </div>
@@ -153,7 +239,7 @@ function EditInventoryItem() {
 
           <div className="itemDetailsButton__save">
             <button className="ctaPrimary" type="button">
-              Save
+              + Add Item
             </button>
           </div>
         </div>
@@ -162,4 +248,4 @@ function EditInventoryItem() {
   );
 }
 
-export default EditInventoryItem;
+export default AddNewInventoryItem;

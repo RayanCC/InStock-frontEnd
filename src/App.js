@@ -11,6 +11,7 @@ import InventoryLayOut from "./components/InventoryLayOut/InventoryLayOut";
 import "./styles/global.scss";
 import DeleteModal from "./components/DeleteModal/DeleteModal";
 import EditInventoryItem from "./components/EditInventoryItem/EditInventoryItem";
+import AddNewInventoryItem from "./components/AddNewInventoryItem/AddNewInventoryItem";
 
 function App() {
   return (
@@ -25,7 +26,7 @@ function App() {
       {/* <WarehouseB />
       <DeleteModal />
       <InventoryLayOut /> */}
-      {<EditInventoryItem />}
+      {<AddNewInventoryItem />}
       <Footer />
     </BrowserRouter>
   );
