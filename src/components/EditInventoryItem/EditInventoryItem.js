@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import "./editInventoryItem.scss";
 import { useState } from "react";
 import axios from "axios";
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 import Header from "../Header/Header";
 import Footer from "../Footer/Footer";
 
@@ -65,19 +65,21 @@ function EditInventoryItem() {
       <main>
         <div className="pageContainer">
           <div className="editInventoryHeader">
-            <svg
-              width="24"
-              height="24"
-              viewBox="0 0 24 24"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-              className="editInventoryHeader__icon"
-            >
-              <path
-                d="M20 11H7.83L13.42 5.41L12 4L4 12L12 20L13.41 18.59L7.83 13H20V11Z"
-                fill="#2E66E6"
-              />
-            </svg>
+            <Link to="/">
+              <svg
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+                className="editInventoryHeader__icon"
+              >
+                <path
+                  d="M20 11H7.83L13.42 5.41L12 4L4 12L12 20L13.41 18.59L7.83 13H20V11Z"
+                  fill="#2E66E6"
+                />
+              </svg>
+            </Link>
             <h1>Edit Inventory Item</h1>
           </div>
           <form>
